@@ -30,12 +30,13 @@ namespace FCS.Lib.BrReg.Models
     {
         public string Organisasjonsnummer { get; set; } = "";
         public string Navn { get; set; } = "";
+        public string Slettedato { get; set; } = "";
         public BrCompanyTypeModel Organisasjonsform { get; set; } = new();
         public BrAddressModel Postadresse { get; set; } = new();
         public BrAddressModel Forretningsadresse { get; set; } = new();
-        public bool Konkurs { get; set; }
-        public bool UnderAvvikling { get; set; }
-        public bool UnderTvangsavviklingEllerTvangsopplosning { get; set; }
+        public string Konkurs { get; set; } = "false";
+        public string UnderAvvikling { get; set; } = "false";
+        public string UnderTvangsavviklingEllerTvangsopplosning { get; set; } = "false";
 
     }
 }

@@ -25,7 +25,6 @@
 // ***********************************************************************
 
 using System;
-using System.Globalization;
 using FCS.Lib.BrReg.Models;
 using FCS.Lib.Common;
 
@@ -33,23 +32,41 @@ namespace FCS.Lib.BrReg
 {
     public class BrVatInfoMapper
     {
-        public BaseVatInfo MapBrToCrm(BrCompanyModel brCompany)
+        public VatStateInfo MapBrToCrm(BrCompanyModel brCompany)
         {
+            if (brCompany == null)
+            {
+                return new VatStateInfo
+                {
+                    RequestDate = DateTime.Now
+                };
+            }
 
-            var c = new BaseVatInfo
+            var c = new VatStateInfo
             {
                 Name = brCompany.Navn,
-                Address = string.Join("\n", brCompany.Forretningsadresse.Adresse),
-                ZipCode = brCompany.Forretningsadresse.Postnummer,
-                City = brCompany.Forretningsadresse.Poststed,
                 VatNumber = brCompany.Organisasjonsnummer,
-                RequestDate = DateTime.Now.ToString(CultureInfo.InvariantCulture),
-                CoName = "",
-                VatNumberValid = 1
+                RequestDate = DateTime.Now,
+                VatNumberValid = true
             };
-            if (brCompany.Konkurs || brCompany.UnderAvvikling || brCompany.UnderTvangsavviklingEllerTvangsopplosning ||
-                !string.IsNullOrWhiteSpace(brCompany.Organisasjonsform.Utgaatt))
-                c.HasFolded = 1;
+
+            if (brCompany.Konkurs == "true")
+                c.HasFolded = true;
+
+            if (brCompany.UnderAvvikling == "true")
+                c.HasFolded = true;
+
+            if (brCompany.UnderTvangsavviklingEllerTvangsopplosning == "true")
+                c.HasFolded = true;
+
+            if(!string.IsNullOrWhiteSpace(brCompany.Organisasjonsform.Utgaatt))
+                c.HasFolded = true;
+
+            if (!string.IsNullOrWhiteSpace(brCompany.Slettedato))
+                c.HasFolded = true;
+
+            if (c.HasFolded)
+                c.VatNumberValid = false;
 
             return c;
         }
