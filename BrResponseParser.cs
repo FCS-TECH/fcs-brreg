@@ -24,7 +24,6 @@
 // <summary></summary>
 // ***********************************************************************
 
-using FCS.Lib.BrReg.Models;
 using Newtonsoft.Json;
 
 namespace FCS.Lib.BrReg

@@ -6,7 +6,7 @@
 // Last Modified By : FH
 // Last Modified On : 04-06-2022
 // ***********************************************************************
-// <copyright file="BrAddressModel.cs" company="">
+// <copyright file="BrCompanyTypeModel.cs" company="">
 //    Copyright (C) 2022 FCS Frede's Computer Services.
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Affero General Public License as
@@ -23,18 +23,11 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
+namespace FCS.Lib.BrReg;
 
-using System.Collections.Generic;
-
-namespace FCS.Lib.BrReg.Models;
-
-public class BrAddressModel
+public class BrCompanyTypeModel
 {
-    public string Land { get; set; } = "";
-    public string Landkode { get; set; } = "";
-    public string Postnummer { get; set; } = "";
-    public string Poststed { get; set; } = "";
-    public List<string> Adresse { get; set; } = new();
-    public string Kommune { get; set; } = "";
-    public string Kommunenummer { get; set; } = "";
+    public string Kode { get; set; } = "";
+    public string Beskrivelse { get; set; } = "";
+    public string Utgaatt { get; set; } = "";
 }

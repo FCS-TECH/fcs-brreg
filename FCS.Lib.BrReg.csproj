@@ -47,9 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\BrAddressModel.cs" />
-    <Compile Include="Models\BrCompanyModel.cs" />
-    <Compile Include="Models\BrCompanyTypeModel.cs" />
+    <Compile Include="BrAddressModel.cs" />
+    <Compile Include="BrCompanyModel.cs" />
+    <Compile Include="BrCompanyTypeModel.cs" />
+    <Compile Include="BrRegQuery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BrHttpRequest.cs" />
     <Compile Include="BrResponseView.cs" />
@@ -70,5 +71,6 @@
   <ItemGroup>
     <Content Include=".gitignore" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,7 +6,7 @@
 // Last Modified By : FH
 // Last Modified On : 04-06-2022
 // ***********************************************************************
-// <copyright file="BrCompanyTypeModel.cs" company="">
+// <copyright file="BrCompanyModel.cs" company="">
 //    Copyright (C) 2022 FCS Frede's Computer Services.
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU Affero General Public License as
@@ -23,11 +23,20 @@
 // </copyright>
 // <summary></summary>
 // ***********************************************************************
-namespace FCS.Lib.BrReg.Models;
 
-public class BrCompanyTypeModel
+namespace FCS.Lib.BrReg
 {
-    public string Kode { get; set; } = "";
-    public string Beskrivelse { get; set; } = "";
-    public string Utgaatt { get; set; } = "";
+    public class BrCompanyModel
+    {
+        public string Organisasjonsnummer { get; set; } = "";
+        public string Navn { get; set; } = "";
+        public string Slettedato { get; set; } = "";
+        public BrCompanyTypeModel Organisasjonsform { get; set; } = new();
+        public BrAddressModel Postadresse { get; set; } = new();
+        public BrAddressModel Forretningsadresse { get; set; } = new();
+        public bool Konkurs { get; set; }
+        public bool UnderAvvikling { get; set; }
+        public bool UnderTvangsavviklingEllerTvangsopplosning { get; set; }
+
+    }
 }

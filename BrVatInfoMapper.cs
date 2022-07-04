@@ -25,14 +25,51 @@
 // ***********************************************************************
 
 using System;
-using FCS.Lib.BrReg.Models;
+using System.Collections.Generic;
 using FCS.Lib.Common;
 
 namespace FCS.Lib.BrReg
 {
     public class BrVatInfoMapper
     {
-        public VatStateInfo MapBrToCrm(BrCompanyModel brCompany)
+
+        public VatInfoDto MapBrToCrm(BrCompanyModel brCompany)
+        {
+            return new VatInfoDto
+            {
+                Name = brCompany.Navn,
+                Address = string.Join(", ", brCompany.Forretningsadresse.Adresse),
+                City = brCompany.Forretningsadresse.Poststed,
+                RequestDate = $"{DateTime.Now:yyyy-MM-dd}",
+                ZipCode = brCompany.Forretningsadresse.Postnummer,
+                VatNumber = brCompany.Organisasjonsnummer,
+                States = new List<VatState>
+                {
+                    new()
+                    {
+                        LastUpdate = "",
+                        State = MapBrVatState(brCompany).HasFolded ? "LUKKET" : "NORMAL",
+                        TimeFrame = new TimeFrame
+                        {
+                            StartDate = "",
+                            EndDate = ""
+                        }
+                    }
+                },
+                LifeCycles = new List<LifeCycle>
+                {
+                    new()
+                    {
+                        TimeFrame = new TimeFrame
+                        {
+                            EndDate = "NN",
+                            StartDate = "NN"
+                        }
+                    }
+                }
+            };
+        }
+        public VatStateInfo MapBrVatState(BrCompanyModel brCompany)
         {
             if (brCompany == null)
             {
@@ -50,13 +87,7 @@ namespace FCS.Lib.BrReg
                 VatNumberValid = true
             };
 
-            if (brCompany.Konkurs == "true")
-                c.HasFolded = true;
-
-            if (brCompany.UnderAvvikling == "true")
-                c.HasFolded = true;
-
-            if (brCompany.UnderTvangsavviklingEllerTvangsopplosning == "true")
+            if (brCompany.Konkurs || brCompany.UnderAvvikling || brCompany.UnderTvangsavviklingEllerTvangsopplosning)
                 c.HasFolded = true;
 
             if(!string.IsNullOrWhiteSpace(brCompany.Organisasjonsform.Utgaatt))
