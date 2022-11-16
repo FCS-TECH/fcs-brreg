@@ -28,13 +28,37 @@ using System.Collections.Generic;
 
 namespace FCS.Lib.BrReg;
 
+/// <summary>
+/// 
+/// </summary>
 public class BrAddressModel
 {
+    /// <summary>
+    /// entity country
+    /// </summary>
     public string Land { get; set; } = "";
+    /// <summary>
+    /// entity country code
+    /// </summary>
     public string Landkode { get; set; } = "";
+    /// <summary>
+    /// entity zip code
+    /// </summary>
     public string Postnummer { get; set; } = "";
+    /// <summary>
+    /// entity postal name
+    /// </summary>
     public string Poststed { get; set; } = "";
+    /// <summary>
+    /// entity address
+    /// </summary>
     public List<string> Adresse { get; set; } = new();
+    /// <summary>
+    /// entity municipal
+    /// </summary>
     public string Kommune { get; set; } = "";
+    /// <summary>
+    /// entity municipal identification
+    /// </summary>
     public string Kommunenummer { get; set; } = "";
 }

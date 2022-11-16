@@ -25,9 +25,21 @@
 // ***********************************************************************
 namespace FCS.Lib.BrReg;
 
+/// <summary>
+/// Class BrCompanyTypeModel
+/// </summary>
 public class BrCompanyTypeModel
 {
+    /// <summary>
+    /// BrReg business code
+    /// </summary>
     public string Kode { get; set; } = "";
+    /// <summary>
+    /// BrReg description
+    /// </summary>
     public string Beskrivelse { get; set; } = "";
+    /// <summary>
+    /// BrReg discontinued
+    /// </summary>
     public string Utgaatt { get; set; } = "";
 }

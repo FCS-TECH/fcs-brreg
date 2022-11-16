@@ -30,9 +30,21 @@ using FCS.Lib.Common;
 
 namespace FCS.Lib.BrReg
 {
+    /// <summary>
+    /// Class BrVatInfoMapper
+    /// </summary>
     public class BrVatInfoMapper
     {
 
+        /// <summary>
+        /// Map BrCompanyModel to CRM
+        /// </summary>
+        /// <param name="brCompany"></param>
+        /// <returns><see cref="VatInfoDto"/></returns>
+        /// <see cref="BrCompanyModel"/>
+        /// <see cref="VatState"/>
+        /// <see cref="LifeCycle"/>
+        /// <see cref="TimeFrame"/>
         public VatInfoDto MapBrToCrm(BrCompanyModel brCompany)
         {
             return new VatInfoDto
@@ -69,6 +81,12 @@ namespace FCS.Lib.BrReg
                 }
             };
         }
+
+        /// <summary>
+        /// Map BrCompanyModel to VatStateInfo
+        /// </summary>
+        /// <param name="brCompany"></param>
+        /// <returns><see cref="VatStateInfo"/></returns>
         public VatStateInfo MapBrVatState(BrCompanyModel brCompany)
         {
             if (brCompany == null)

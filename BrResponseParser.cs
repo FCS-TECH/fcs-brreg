@@ -28,8 +28,16 @@ using Newtonsoft.Json;
 
 namespace FCS.Lib.BrReg
 {
+    /// <summary>
+    /// Class BrResponseParser
+    /// </summary>
     public class BrResponseParser
     {
+        /// <summary>
+        /// Parse response to BrCompanyModel
+        /// </summary>
+        /// <param name="responseData"></param>
+        /// <returns><see cref="BrCompanyModel"/></returns>
         public BrCompanyModel ParseBrResponse(string responseData)
         {
             return JsonConvert.DeserializeObject<BrCompanyModel>(responseData);

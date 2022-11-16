@@ -29,8 +29,17 @@ using System.Threading.Tasks;
 
 namespace FCS.Lib.BrReg
 {
+    /// <summary>
+    /// Class BrHttpRequest
+    /// </summary>
     public class BrHttpRequest
     {
+        /// <summary>
+        /// Async http request
+        /// </summary>
+        /// <param name="endpoint"></param>
+        /// <param name="userAgent"></param>
+        /// <returns><see cref="BrResponseView"/></returns>
         public async Task<BrResponseView> GetResponseAsync(string endpoint, string userAgent)
         {
             using var client = new HttpClient();

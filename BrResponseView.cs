@@ -28,10 +28,22 @@ using System.Net;
 
 namespace FCS.Lib.BrReg
 {
+    /// <summary>
+    /// Class BrResponseView
+    /// </summary>
     public class BrResponseView
     {
+        /// <summary>
+        /// http response status code
+        /// </summary>
         public HttpStatusCode Code { get; set; }
+        /// <summary>
+        /// Flag indicating success
+        /// </summary>
         public bool IsSuccessStatusCode { get; set; }
+        /// <summary>
+        /// Response message
+        /// </summary>
         public string Message { get; set; } = "";
     }
 }

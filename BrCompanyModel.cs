@@ -26,16 +26,46 @@
 
 namespace FCS.Lib.BrReg
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class BrCompanyModel
     {
+        /// <summary>
+        /// Entity vat number
+        /// </summary>
         public string Organisasjonsnummer { get; set; } = "";
+        /// <summary>
+        /// Entity name
+        /// </summary>
         public string Navn { get; set; } = "";
+        /// <summary>
+        /// Entity deletion date
+        /// </summary>
         public string Slettedato { get; set; } = "";
+        /// <summary>
+        /// Entity business type
+        /// </summary>
         public BrCompanyTypeModel Organisasjonsform { get; set; } = new();
+        /// <summary>
+        /// entity postal address
+        /// </summary>
         public BrAddressModel Postadresse { get; set; } = new();
+        /// <summary>
+        /// entity business address
+        /// </summary>
         public BrAddressModel Forretningsadresse { get; set; } = new();
+        /// <summary>
+        /// entity out-of-business flag
+        /// </summary>
         public bool Konkurs { get; set; }
+        /// <summary>
+        /// entity to be closed flag
+        /// </summary>
         public bool UnderAvvikling { get; set; }
+        /// <summary>
+        /// entity to be force closed
+        /// </summary>
         public bool UnderTvangsavviklingEllerTvangsopplosning { get; set; }
 
     }
