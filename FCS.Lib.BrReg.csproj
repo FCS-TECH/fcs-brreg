@@ -48,14 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrAddressModel.cs" />
-    <Compile Include="BrCompanyModel.cs" />
-    <Compile Include="BrCompanyTypeModel.cs" />
+    <Compile Include="BrRegAddress.cs" />
+    <Compile Include="BrRegCompany.cs" />
+    <Compile Include="BrRegCompanyType.cs" />
     <Compile Include="BrRegQuery.cs" />
-    <Compile Include="BrHttpRequest.cs" />
-    <Compile Include="BrResponseView.cs" />
-    <Compile Include="BrResponseParser.cs" />
-    <Compile Include="BrVatInfoMapper.cs" />
+    <Compile Include="BrRegHttpRequest.cs" />
+    <Compile Include="BrRegResponseParser.cs" />
+    <Compile Include="BrRegVatInfoMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
