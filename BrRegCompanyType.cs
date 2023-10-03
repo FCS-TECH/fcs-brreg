@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : FCS.Lib.BrReg
-// Author          : fhdk
-// Created          : 2022 12 17 13:33
+// Author           : 
+// Created          : 2023 10 01 11:03
 // 
-// Last Modified By: fhdk
-// Last Modified On : 2023 03 14 09:16
+// Last Modified By : root
+// Last Modified On : 2023 10 02 15:23
 // ***********************************************************************
-// <copyright file="BrCompanyTypeModel.cs" company="FCS">
-//     Copyright (C) 2022-2023 FCS Frede's Computer Services.
+// <copyright file="BrRegCompanyType.cs" company="FCS">
+//     Copyright (C) 2023-2023 FCS Frede's Computer Services.
 //     This program is free software: you can redistribute it and/or modify
 //     it under the terms of the GNU Affero General Public License as
 //     published by the Free Software Foundation, either version 3 of the
@@ -27,22 +27,22 @@
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-/// Class BrCompanyTypeModel
+///     Class BrCompanyTypeModel
 /// </summary>
 public class BrRegCompanyType
 {
     /// <summary>
-    /// BrReg business code
+    ///     BrReg business code
     /// </summary>
     public string Kode { get; set; } = "";
 
     /// <summary>
-    /// BrReg description
+    ///     BrReg description
     /// </summary>
     public string Beskrivelse { get; set; } = "";
 
     /// <summary>
-    /// BrReg discontinued
+    ///     BrReg discontinued
     /// </summary>
     public string Utgaatt { get; set; } = "";
 }

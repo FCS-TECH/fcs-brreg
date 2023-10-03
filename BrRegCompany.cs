@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : FCS.Lib.BrReg
-// Author          : fhdk
-// Created          : 2022 12 17 13:33
+// Author           : 
+// Created          : 2023 10 01 11:03
 // 
-// Last Modified By: fhdk
-// Last Modified On : 2023 03 14 09:16
+// Last Modified By : root
+// Last Modified On : 2023 10 02 15:23
 // ***********************************************************************
-// <copyright file="BrCompanyModel.cs" company="FCS">
-//     Copyright (C) 2022-2023 FCS Frede's Computer Services.
+// <copyright file="BrRegCompany.cs" company="FCS">
+//     Copyright (C) 2023-2023 FCS Frede's Computer Services.
 //     This program is free software: you can redistribute it and/or modify
 //     it under the terms of the GNU Affero General Public License as
 //     published by the Free Software Foundation, either version 3 of the
@@ -27,52 +27,51 @@
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-/// 
 /// </summary>
 public class BrRegCompany
 {
     /// <summary>
-    /// Entity vat number
+    ///     Entity vat number
     /// </summary>
     public string Organisasjonsnummer { get; set; } = "";
 
     /// <summary>
-    /// Entity name
+    ///     Entity name
     /// </summary>
     public string Navn { get; set; } = "";
 
     /// <summary>
-    /// Entity deletion date
+    ///     Entity deletion date
     /// </summary>
     public string Slettedato { get; set; } = "";
 
     /// <summary>
-    /// Entity business type
+    ///     Entity business type
     /// </summary>
     public BrRegCompanyType Organisasjonsform { get; set; } = new();
 
     /// <summary>
-    /// entity postal address
+    ///     entity postal address
     /// </summary>
     public BrRegAddress Postadresse { get; set; } = new();
 
     /// <summary>
-    /// entity business address
+    ///     entity business address
     /// </summary>
     public BrRegAddress Forretningsadresse { get; set; } = new();
 
     /// <summary>
-    /// entity out-of-business flag
+    ///     entity out-of-business flag
     /// </summary>
     public bool Konkurs { get; set; }
 
     /// <summary>
-    /// entity to be closed flag
+    ///     entity to be closed flag
     /// </summary>
     public bool UnderAvvikling { get; set; }
 
     /// <summary>
-    /// entity to be force closed
+    ///     entity to be force closed
     /// </summary>
     public bool UnderTvangsavviklingEllerTvangsopplosning { get; set; }
 }

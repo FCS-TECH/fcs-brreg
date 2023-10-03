@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : FCS.Lib.BrReg
-// Author          : fhdk
-// Created          : 2022 12 17 13:33
+// Author           : 
+// Created          : 2023 10 01 11:03
 // 
-// Last Modified By: fhdk
-// Last Modified On : 2023 03 14 09:16
+// Last Modified By : root
+// Last Modified On : 2023 10 02 15:23
 // ***********************************************************************
-// <copyright file="BrAddressModel.cs" company="FCS">
-//     Copyright (C) 2022-2023 FCS Frede's Computer Services.
+// <copyright file="BrRegAddress.cs" company="FCS">
+//     Copyright (C) 2023-2023 FCS Frede's Computer Services.
 //     This program is free software: you can redistribute it and/or modify
 //     it under the terms of the GNU Affero General Public License as
 //     published by the Free Software Foundation, either version 3 of the
@@ -29,42 +29,41 @@ using System.Collections.Generic;
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-/// 
 /// </summary>
 public class BrRegAddress
 {
     /// <summary>
-    /// entity country
+    ///     entity country
     /// </summary>
     public string Land { get; set; } = "";
 
     /// <summary>
-    /// entity country code
+    ///     entity country code
     /// </summary>
     public string Landkode { get; set; } = "";
 
     /// <summary>
-    /// entity zip code
+    ///     entity zip code
     /// </summary>
     public string Postnummer { get; set; } = "";
 
     /// <summary>
-    /// entity postal name
+    ///     entity postal name
     /// </summary>
     public string Poststed { get; set; } = "";
 
     /// <summary>
-    /// entity address
+    ///     entity address
     /// </summary>
     public List<string> Adresse { get; set; } = new();
 
     /// <summary>
-    /// entity municipal
+    ///     entity municipal
     /// </summary>
     public string Kommune { get; set; } = "";
 
     /// <summary>
-    /// entity municipal identification
+    ///     entity municipal identification
     /// </summary>
     public string Kommunenummer { get; set; } = "";
 }

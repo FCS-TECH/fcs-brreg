@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : FCS.Lib.BrReg
-// Author          : fhdk
-// Created          : 2022 12 17 13:33
+// Author           : 
+// Created          : 2023 10 01 11:03
 // 
-// Last Modified By: fhdk
-// Last Modified On : 2023 03 14 09:16
+// Last Modified By : root
+// Last Modified On : 2023 10 02 15:23
 // ***********************************************************************
-// <copyright file="BrVatInfoMapper.cs" company="FCS">
-//     Copyright (C) 2022-2023 FCS Frede's Computer Services.
+// <copyright file="BrRegVatInfoMapper.cs" company="FCS">
+//     Copyright (C) 2023-2023 FCS Frede's Computer Services.
 //     This program is free software: you can redistribute it and/or modify
 //     it under the terms of the GNU Affero General Public License as
 //     published by the Free Software Foundation, either version 3 of the
@@ -31,19 +31,21 @@ using FCS.Lib.Common;
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-/// Class BrVatInfoMapper
+///     Class BrVatInfoMapper
 /// </summary>
 public class BrRegVatInfoMapper
 {
     /// <summary>
-    /// Map BrCompanyModel to CRM
+    ///     Map BrCompanyModel to CRM
     /// </summary>
     /// <param name="brCompany"></param>
-    /// <returns><see cref="VatInfoDto"/></returns>
-    /// <see cref="BrRegCompany"/>
-    /// <see cref="VatState"/>
-    /// <see cref="LifeCycle"/>
-    /// <see cref="TimeFrame"/>
+    /// <returns>
+    ///     <see cref="VatInfoDto" />
+    /// </returns>
+    /// <see cref="BrRegCompany" />
+    /// <see cref="VatState" />
+    /// <see cref="LifeCycle" />
+    /// <see cref="TimeFrame" />
     public VatInfoDto MapBrToCrm(BrRegCompany brCompany)
     {
         return new VatInfoDto
@@ -82,10 +84,12 @@ public class BrRegVatInfoMapper
     }
 
     /// <summary>
-    /// Map BrCompanyModel to VatStateInfo
+    ///     Map BrCompanyModel to VatStateInfo
     /// </summary>
     /// <param name="brCompany"></param>
-    /// <returns><see cref="TaxIdInfo"/></returns>
+    /// <returns>
+    ///     <see cref="TaxIdInfo" />
+    /// </returns>
     public TaxIdInfo MapBrVatState(BrRegCompany brCompany)
     {
         if (brCompany == null)

@@ -1,13 +1,13 @@
 ﻿// ***********************************************************************
 // Assembly         : FCS.Lib.BrReg
-// Author          : fhdk
-// Created          : 2022 12 17 13:33
+// Author           : 
+// Created          : 2023 10 01 11:03
 // 
-// Last Modified By: fhdk
-// Last Modified On : 2023 03 14 09:16
+// Last Modified By : root
+// Last Modified On : 2023 10 02 15:23
 // ***********************************************************************
-// <copyright file="BrResponseParser.cs" company="FCS">
-//     Copyright (C) 2022-2023 FCS Frede's Computer Services.
+// <copyright file="BrRegResponseParser.cs" company="FCS">
+//     Copyright (C) 2023-2023 FCS Frede's Computer Services.
 //     This program is free software: you can redistribute it and/or modify
 //     it under the terms of the GNU Affero General Public License as
 //     published by the Free Software Foundation, either version 3 of the
@@ -29,15 +29,17 @@ using Newtonsoft.Json;
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-/// Class BrResponseParser
+///     Class BrResponseParser
 /// </summary>
 public class BrRegResponseParser
 {
     /// <summary>
-    /// Parse response to BrCompanyModel
+    ///     Parse response to BrCompanyModel
     /// </summary>
     /// <param name="responseData"></param>
-    /// <returns><see cref="BrRegCompany"/></returns>
+    /// <returns>
+    ///     <see cref="BrRegCompany" />
+    /// </returns>
     public BrRegCompany ParseBrResponse(string responseData)
     {
         return JsonConvert.DeserializeObject<BrRegCompany>(responseData);
