@@ -1,50 +1,67 @@
-﻿// ***********************************************************************
-// Assembly         : FCS.Lib.BrReg
-// Filename         : BrRegHttpRequest.cs
-// Author           : Frede Hundewadt
-// Created          : 2024 03 29 12:37
-// 
-// Last Modified By : root
-// Last Modified On : 2024 04 11 13:04
-// ***********************************************************************
-// <copyright company="FCS">
-//     Copyright (C) 2024-2024 FCS Frede's Computer Service.
-//     This program is free software: you can redistribute it and/or modify
-//     it under the terms of the GNU Affero General Public License as
-//     published by the Free Software Foundation, either version 3 of the
-//     License, or (at your option) any later version.
-// 
-//     This program is distributed in the hope that it will be useful,
-//     but WITHOUT ANY WARRANTY; without even the implied warranty of
-//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//     GNU Affero General Public License for more details.
-// 
-//     You should have received a copy of the GNU Affero General Public License
-//     along with this program.  If not, see [https://www.gnu.org/licenses]
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
+﻿// // ***********************************************************************
+// // Solution         : Inno.Api.v2
+// // Assembly         : FCS.Lib.BrReg
+// // Filename         : BrRegHttpRequest.cs
+// // Created          : 2025-01-03 14:01
+// // Last Modified By : dev
+// // Last Modified On : 2025-01-04 11:01
+// // ***********************************************************************
+// // <copyright company="Frede Hundewadt">
+// //     Copyright (C) 2010-2025 Frede Hundewadt
+// //     This program is free software: you can redistribute it and/or modify
+// //     it under the terms of the GNU Affero General Public License as
+// //     published by the Free Software Foundation, either version 3 of the
+// //     License, or (at your option) any later version.
+// //
+// //     This program is distributed in the hope that it will be useful,
+// //     but WITHOUT ANY WARRANTY; without even the implied warranty of
+// //     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// //     GNU Affero General Public License for more details.
+// //
+// //     You should have received a copy of the GNU Affero General Public License
+// //     along with this program.  If not, see [https://www.gnu.org/licenses]
+// // </copyright>
+// // <summary></summary>
+// // ***********************************************************************
 
 using System.Net.Http;
 using System.Threading.Tasks;
 using FCS.Lib.Common;
 
-
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-///     Class BrHttpRequest
+///     Represents an HTTP request handler for interacting with the Brønnøysund Register Center (BrReg) services.
 /// </summary>
+/// <remarks>
+///     This class provides functionality to send HTTP requests to BrReg endpoints and retrieve responses.
+///     It is designed to be used for querying information from the BrReg service.
+/// </remarks>
 public class BrRegHttpRequest
 {
     /// <summary>
-    ///     Async http request
+    ///     Sends an asynchronous HTTP GET request to the specified endpoint with the provided user agent
+    ///     and retrieves the response as an <see cref="HttpResponseView" />.
     /// </summary>
-    /// <param name="endpoint"></param>
-    /// <param name="userAgent"></param>
+    /// <param name="endpoint">
+    ///     The URL of the endpoint to which the HTTP GET request will be sent.
+    /// </param>
+    /// <param name="userAgent">
+    ///     The user agent string to include in the HTTP request headers.
+    /// </param>
     /// <returns>
-    ///     <see cref="HttpResponseView" />
+    ///     A task that represents the asynchronous operation. The task result contains an
+    ///     <see cref="HttpResponseView" /> object with the HTTP response details, including the status code,
+    ///     success status, and response message.
     /// </returns>
+    /// <exception cref="HttpRequestException">
+    ///     Thrown if the HTTP request fails.
+    /// </exception>
+    /// <remarks>
+    ///     This method is designed to interact with Brønnøysund Register Center (BrReg) services.
+    ///     It constructs an HTTP GET request, adds the user agent header, sends the request, and processes
+    ///     the response to return a structured view of the HTTP response.
+    /// </remarks>
     public async Task<HttpResponseView> GetResponseAsync(string endpoint, string userAgent)
     {
         using var client = new HttpClient();

@@ -1,53 +1,51 @@
-﻿// ***********************************************************************
-// Assembly         : FCS.Lib.BrReg
-// Filename         : BrRegVatInfoMapper.cs
-// Author           : Frede Hundewadt
-// Created          : 2024 03 29 12:37
-// 
-// Last Modified By : root
-// Last Modified On : 2024 04 11 13:05
-// ***********************************************************************
-// <copyright company="FCS">
-//     Copyright (C) 2024-2024 FCS Frede's Computer Service.
-//     This program is free software: you can redistribute it and/or modify
-//     it under the terms of the GNU Affero General Public License as
-//     published by the Free Software Foundation, either version 3 of the
-//     License, or (at your option) any later version.
-// 
-//     This program is distributed in the hope that it will be useful,
-//     but WITHOUT ANY WARRANTY; without even the implied warranty of
-//     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-//     GNU Affero General Public License for more details.
-// 
-//     You should have received a copy of the GNU Affero General Public License
-//     along with this program.  If not, see [https://www.gnu.org/licenses]
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
+﻿// // ***********************************************************************
+// // Solution         : Inno.Api.v2
+// // Assembly         : FCS.Lib.BrReg
+// // Filename         : BrRegVatInfoMapper.cs
+// // Created          : 2025-01-03 14:01
+// // Last Modified By : dev
+// // Last Modified On : 2025-01-04 11:01
+// // ***********************************************************************
+// // <copyright company="Frede Hundewadt">
+// //     Copyright (C) 2010-2025 Frede Hundewadt
+// //     This program is free software: you can redistribute it and/or modify
+// //     it under the terms of the GNU Affero General Public License as
+// //     published by the Free Software Foundation, either version 3 of the
+// //     License, or (at your option) any later version.
+// //
+// //     This program is distributed in the hope that it will be useful,
+// //     but WITHOUT ANY WARRANTY; without even the implied warranty of
+// //     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// //     GNU Affero General Public License for more details.
+// //
+// //     You should have received a copy of the GNU Affero General Public License
+// //     along with this program.  If not, see [https://www.gnu.org/licenses]
+// // </copyright>
+// // <summary></summary>
+// // ***********************************************************************
 
 using System;
 using System.Collections.Generic;
 using FCS.Lib.Common;
 
-
 namespace FCS.Lib.BrReg;
 
 /// <summary>
-///     Class BrVatInfoMapper
+///     Provides functionality to map Brønnøysund Register Center (BrReg) company data
+///     to VAT-related data transfer objects (DTOs) and states.
 /// </summary>
+/// <remarks>
+///     This class is responsible for transforming data from BrRegCompany models into
+///     VAT-specific representations such as <see cref="VatInfoDto" /> and <see cref="TaxIdInfo" />.
+///     It is utilized in services that interact with Brønnøysund Register Center data.
+/// </remarks>
 public class BrRegVatInfoMapper
 {
     /// <summary>
-    ///     Map BrCompanyModel to CRM
+    ///     Maps a <see cref="BrRegCompany" /> object to a <see cref="VatInfoDto" /> object.
     /// </summary>
-    /// <param name="brCompany"></param>
-    /// <returns>
-    ///     <see cref="VatInfoDto" />
-    /// </returns>
-    /// <see cref="BrRegCompany" />
-    /// <see cref="VatState" />
-    /// <see cref="LifeCycle" />
-    /// <see cref="TimeFrame" />
+    /// <param name="brCompany">The <see cref="BrRegCompany" /> instance containing the source data.</param>
+    /// <returns>A <see cref="VatInfoDto" /> instance populated with the mapped data.</returns>
     public VatInfoDto MapBrToCrm(BrRegCompany brCompany)
     {
         return new VatInfoDto
@@ -87,12 +85,20 @@ public class BrRegVatInfoMapper
 
 
     /// <summary>
-    ///     Map BrCompanyModel to VatStateInfo
+    ///     Maps the VAT-related state of a Brønnøysund Register Center (BrReg) company
+    ///     to a <see cref="TaxIdInfo" /> object.
     /// </summary>
-    /// <param name="brCompany"></param>
+    /// <param name="brCompany">
+    ///     The <see cref="BrRegCompany" /> instance containing the company data to be mapped.
+    /// </param>
     /// <returns>
-    ///     <see cref="TaxIdInfo" />
+    ///     A <see cref="TaxIdInfo" /> object representing the VAT-related state of the company.
     /// </returns>
+    /// <remarks>
+    ///     This method evaluates the company's status based on various properties, such as
+    ///     bankruptcy, liquidation, or dissolution, and determines whether the VAT number
+    ///     is valid or if the company has folded.
+    /// </remarks>
     public TaxIdInfo MapBrVatState(BrRegCompany brCompany)
     {
         if (brCompany == null)
